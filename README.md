@@ -16,20 +16,20 @@ If you prefer, you can include the script using a script tag, but if you're not 
 
 ## Example Usage
 
-timer.start('Load Data', 'This is my first run');
+tinyTimer.start('Load Data', 'This is my first run');
 
 //Some code that takes some time to run
 
-timer.next('Processing data');
+tinyTimer.next('Processing data');
 
 //Some code that processes the data
 
-timer.next('Draw to DOM')
+tinyTimer.next('Draw to DOM')
 
 //Some code that draws the data to the DOM
 
-timer.stop();
+tinyTimer.stop();
 
 You can visualize your data by typing the following in the console
 
-timer.getHistory();
+tinyTimer.getHistory();
