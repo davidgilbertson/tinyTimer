@@ -3,11 +3,15 @@ tinyTimer
 
 Use the timer to record the running time for particular areas of your code, then output the results to the console in a neat little table.
 
+The timer requires a console that supports the console.table() command.
+
 ![screenshot](https://raw.github.com/davidgilbertson/tinyTimer/master/screenshot.png)
 
 ## Installation
 
-Just copy paste the timer object into your code. Obviously you should be adding it your app's namespace.
+Just copy paste the timer code into your code. Obviously you should be adding it your app's namespace.
+
+If you prefer, you can include the script using a script tag, but if you're not concatenating you javascript files at build time then this is just another network request that the world doesn't need.
 
 
 ## Example Usage
