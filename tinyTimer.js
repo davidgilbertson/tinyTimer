@@ -19,7 +19,7 @@ var tinyTimer = {
   stop: function() {
     this.currentRun[this.currentName] = new Date().valueOf() - this.lastStart;
     this.currentRun.notes = this.notes; //passed in with the start function
-    this.history.push(this.currentRun);
+    this.history.unshift(this.currentRun);
     this.storeHistory();
   },
   storeHistory: function() {
@@ -27,7 +27,7 @@ var tinyTimer = {
     var history;
     if (!!window.localStorage.timerLog) { //there is previous history in LS
       history = JSON.parse(window.localStorage.timerLog);
-      history.push(this.currentRun);
+      history.unshift(this.currentRun);
     } else {
       history = this.history;
     }
@@ -40,9 +40,20 @@ var tinyTimer = {
     } else {
       history = this.history;
     }
-    history.reverse(); //It's reversed so the column order matches the current step order
     console.log('Run history (most recent at top)');
-    console.table(history);
+    if (console.table) {
+      console.table(history);
+    } else {
+      var consoleString;
+      for (var i = 0; i < history.length; i++) {
+        consoleString = '';
+        for (var prop in history[i]) {
+          consoleString += prop + ': ' + history[i][prop] + '   ';
+        }
+        console.log(consoleString);
+      }
+    }
+    
   },
   clear: function() {
     this.history.length = 0;
