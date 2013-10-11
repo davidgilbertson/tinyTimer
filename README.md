@@ -3,7 +3,7 @@ tinyTimer
 
 Use the timer to record the running time for particular areas of your code, then output the results to the console in a neat little table.
 
-The timer requires a console that supports the console.table() command.
+If your browser doesn't support the console.table() command, the data will be output in plain text.
 
 ![screenshot](https://raw.github.com/davidgilbertson/tinyTimer/master/screenshot.png)
 
@@ -33,3 +33,6 @@ tinyTimer.stop();
 You can visualize your data by typing the following in the console
 
 tinyTimer.getHistory();
+
+
+You can clear the history with tinyTimer.clear()
